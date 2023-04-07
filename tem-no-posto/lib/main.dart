@@ -22,6 +22,8 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.lightGreen,
       ),
+   
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -52,55 +54,19 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-
-
-
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   children: [
-      //     Row(
-      //       children: [
-      //        Center(
-      //         child: Container(
-      //             width: 200.0,
-      //             height: 200.0,
-      //             margin: EdgeInsets.all(20),
-                  // decoration: BoxDecoration(
-                  // image: DecorationImage(
-                  //     image: AssetImage("image/healthcare.png"),
-                  //           fit: BoxFit.cover
-                  //     ),
-                  //   ), 
-                  // ),
-      //       ),
-      //         Container(
-      //           width: 200,
-      //           height: 200,
-      //           padding: EdgeInsets.all(70),
-      //           margin: EdgeInsets.all(20),
-      //           decoration: BoxDecoration(
-      //             image: DecorationImage(
-      //               image: AssetImage("image/tijucas.png"),
-      //                 fit: BoxFit.cover,
-      //               ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //     items: [ 
-      //       BottomNavigationBarItem(
-      //         icon: Icon(Icons.lightbulb),
-      //         label: 'Como usar o Aplicativo?',
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: Icon(Icons.info),
-      //         label: 'Informações',
-      //       ),
-      //     ],
-      //   ),
+    
+      bottomNavigationBar: BottomNavigationBar(
+          items: [ 
+            BottomNavigationBarItem(
+              icon: Icon(Icons.lightbulb),
+              label: 'Como usar o Aplicativo?',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: 'Informações',
+            ),
+          ],
+        ),
       );
   }
 }
