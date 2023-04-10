@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,60 +15,124 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'TEM NO POSTO',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.lightGreen,
-      ),
-   
 
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 200,
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("image/sus.png"),
-                            fit: BoxFit.cover
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage("image/temnoposto.png"),
                       ),
-                    ), 
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Text('Encontre Medicamentos Distribuídos pelo SUS no Município de Tijucas',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 20,
+                     ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 80),
+                      width: 320,
+                      height: 50,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Selecione o seu bairro para iniciar",
+                          hintStyle: TextStyle(
+                            fontSize: 17,
+                            color: Colors.grey,
+                          ),
+                          suffixIcon: Icon(Icons.arrow_drop_down),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 25, bottom: 70),
+                    child: 
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: (){
+                            print('Acesso indisponível');
+                          },
+                          child: Text('Acessar'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromRGBO(299, 215, 223, 299),
+                            minimumSize: Size(220, 50),
+                            textStyle: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: 
+                      AssetImage('image/preftijucas.png'),
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                  ),
+                  SizedBox(width: 30),
+                  Image(
+                    image: 
+                      AssetImage('image/sus.png'),
+                      width: 100,
+                      height: 100,
+                  ),
+                ],
               ),
               Container(
-                width: 200,
-                height: 320,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("image/tijucas.png"),
-                            fit: BoxFit.cover
-                      ),
-                    ), 
+                margin: EdgeInsets.only(top: 140),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.info),
+                    SizedBox(width: 8),
+                    Text('Como utilizar o APP',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
+                   ),
+                  ],
+                ),
               ),
             ],
           ),
-        ],
-      ),
-    
-    
-      bottomNavigationBar: BottomNavigationBar(
-          items: [ 
-            BottomNavigationBarItem(
-              icon: Icon(Icons.lightbulb),
-              label: 'Como usar o Aplicativo?',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.info),
-              label: 'Informações',
-            ),
-          ],
-        ),
       );
   }
 }
+
+
