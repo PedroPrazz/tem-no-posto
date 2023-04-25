@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tem_no_posto/tutorial-app.dart';
-import 'acessar-app.dart';
+import 'package:tem_no_posto/main.dart';
+import 'package:tem_no_posto/pesquisar-medicamento.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: HomePage(),
-  ),
-  );
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+class AcessarSegundaTela extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-
-          body: Column(
+      body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -57,12 +45,12 @@ class HomePage extends StatelessWidget {
                       height: 50,
                       child: TextField(
                         decoration: InputDecoration(
-                          hintText: "Selecione o seu bairro para iniciar",
+                          hintText: "Digite o nome do medicamento",
                           hintStyle: TextStyle(
                             fontSize: 17,
                             color: Colors.grey,
                           ),
-                          suffixIcon: Icon(Icons.arrow_drop_down),
+                          suffixIcon: Icon(Icons.search),
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.blue),
@@ -83,10 +71,10 @@ class HomePage extends StatelessWidget {
                           onPressed: (){
                             Navigator.push(
                               context, 
-                              MaterialPageRoute(builder: (context) => AcessarSegundaTela()),
+                              MaterialPageRoute(builder: (context) => PesquisarMedicamentos()),
                             );
                           },
-                          child: Text('Acessar'),
+                          child: Text('Pesquisar'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(299, 215, 223, 299),
                             minimumSize: Size(220, 50),
@@ -124,16 +112,14 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                   Icon(Icons.info),
-                   SizedBox(width: 0),
                    OutlinedButton(
                       onPressed: () {
                         Navigator.push(
-                              context, 
-                              MaterialPageRoute(builder: (context) => TutorialApp()),
-                            );
+                          context, 
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
                       },
-                     child: Text('Como utilizar o APP',
+                     child: Text('Voltar a tela inicial',
                      style: TextStyle(
                       color: Colors.black,
                       decoration: TextDecoration.underline,
@@ -148,6 +134,6 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-      );
+    );
   }
 }
