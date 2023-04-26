@@ -63,6 +63,8 @@ assets:
    - images/sus.png
    - images/temnoposto.png
    - images/preftijucas.png
+   - images/check-mark.png
+   - images/warning.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
